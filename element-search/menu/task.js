@@ -1,15 +1,14 @@
-const menuLinks = document.querySelectorAll(".menu__link");
-const menu = document.querySelectorAll(".menu");
+// const menuLinks = document.querySelectorAll(".menu__link");
+const menuItems = document.querySelectorAll(".menu__item");
+// const menu = document.querySelectorAll(".menu");
 
-menuLinks.onclick = function(){
-	
-	for (let i = 0; i < menuLinks.length; i++){
-	      if(menuLinks[i].closest(".menu")){
-	  	    menuLinks[i].classList.add(".menu_active");
-	      }
-	      if(menuLinks[i].closest(".menu_main")){
-	  	    return false;
-	    }
+menuItems.onclick = function(){
+	for (let i = 0; i < menuItems.length; i++){
+		let menuActive = menuItems[i].closest("menu");
+		menuActive.classList.add("menu_active");
+	      if(menuItems[i].contains("menu_sub")){
+	  	    return false
+	    } 
 	}
 	
 };
