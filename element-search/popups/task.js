@@ -23,7 +23,7 @@ modalClose.forEach((elem) => {
 // };
 
 function closeModalWindow(){
-  	this.closest("modal");
-	this.classList.remove("modal_active");
+  	let modal = this.closest("div.modal");
+	modal.classList.remove("modal_active");
 };
 

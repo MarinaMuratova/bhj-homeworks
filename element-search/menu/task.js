@@ -1,15 +1,13 @@
-// const menuLinks = document.querySelectorAll(".menu__link");
-const menuItems = Array.from(document.querySelectorAll(".menu__item"));
-// const menu = document.querySelectorAll(".menu");
+const menuItems = Array.from(document.querySelectorAll("li.menu__item"));
 
 menuItems.forEach((elem) => {
-	elem.addEventListener('click', function(){
-		if(this.closest('.menu_main')){
-            this.classList.add("menu_active");
-		}
-		
-	    if(this.contains('menu_sub')){
-	  	    return false
-	    } 
-	}
+	elem.addEventListener('mouseover', function(evt){
+		let menu = this.querySelector('.menu_sub');
+	    if(menu){
+	  	    menu.classList.add('menu_active');
+	  	    evt.preventDefault();
+	    } else{
+	    	evt.preventDefault();
+	    }
+	})
 });
