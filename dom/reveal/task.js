@@ -1,11 +1,12 @@
-const reveal = document.querySelector(".reveal");
+const reveal = Array.from(document.querySelectorAll(".reveal"));
 const viewportHeight = window.innerHeight;
 console.log(`${viewportHeight} viewportHeight`);
 
 window.addEventListener('scroll', function(){
-	let coords = reveal.getBoundingClientRect().top;
-	console.log(coords);
-	if (coords < viewportHeight) {
-		reveal.classList.add('reveal_active');
-	}
+	reveal.forEach((elem) => {
+		let coords = elem.getBoundingClientRect().top;
+	       if (coords < viewportHeight) {
+		       elem.classList.add('reveal_active');
+	        }
+	});
 })
