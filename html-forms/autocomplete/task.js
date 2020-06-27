@@ -67,13 +67,24 @@ class Autocomplete {
     this.list.innerHTML = html.join('');
   }
 
-  getMatches( text ) {    
+  getMatches( text ) {  
+    let inputValue = this.input.value
+  console.log(inputValue);
+  let selectedIndex = this.input.selectedIndex;
+  console.log(selectedIndex);
+  let inputText = this.input.options[this.input.selectedIndex].text;
+  console.log(inputText);
+  let inputOptions = Array.from(this.input.options);
+  let inputOptionsIncludes = inputOptions.includes(text);
+  if(inputOptionsIncludes){
     return [
       {
-        text: text,
+        text: this.input.options[this.input.selectedIndex].text,
         value: this.input.value
       }
     ];
+  }
+    
   }
 }
 
