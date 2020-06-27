@@ -9,12 +9,12 @@ fontSize.forEach((elem) => {
 		// }
 		let activeSize = document.querySelector('.font-size_active');
 		activeSize.classList.remove('font-size_active');
-		this.classList.add('font-size_active');
-		if(this.contains("font-size_small")){
+		elem.classList.add('font-size_active');
+		if(elem.contains("font-size_small")){
 			let smallSize = this.closest('.book');
 			smallSize.classList.add("book_fs-small");
 		}
-		if(this.contains("font-size_big")){
+		if(elem.contains("font-size_big")){
 			let bigSize = this.closest('.book');
 			bigSize.classList.add("book_fs-big");
 		}
