@@ -16,6 +16,6 @@ dropdown.forEach((elem) => {
     	}else{
     		this.childNodes[3].classList.add('dropdown__list_active');
     	}
-})
+    })
 })
 
