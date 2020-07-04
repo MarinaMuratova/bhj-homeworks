@@ -4,19 +4,18 @@ fontSize.forEach((elem) => {
 	elem.addEventListener('click', function(e){
 		e.preventDefault();
 
-		let activeSize = document.querySelector('.font-size_active');
-		if(activeSize){
-			activeSize.classList.remove('font-size_active');
-		}
-		elem.classList.add('font-size_active');
+		document.querySelector('.font-size_active').classList.remove('font-size_active');
+		
+		this.classList.add('font-size_active');
+		this.closest('.book').classList.remove("book_fs-big");
+		this.closest('.book').classList.remove("book_fs-small");
 
-		if(elem.querySelector(".font-size_small")){
-			let smallSize = this.closest('.book');
-			smallSize.classList.add("book_fs-small");
+		if(elem.classList.contains("font-size_small")){
+			this.closest('.book').classList.add("book_fs-small");
 		}
-		if(elem.querySelector(".font-size_big")){
-			let bigSize = this.closest('.book');
-			bigSize.classList.add("book_fs-big");
+
+		if(elem.classList.contains("font-size_big")){
+			this.closest('.book').classList.add("book_fs-big");
 		}
 	})
 })

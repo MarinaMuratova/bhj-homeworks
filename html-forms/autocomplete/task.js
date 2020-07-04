@@ -69,15 +69,16 @@ class Autocomplete {
 
   getMatches( text ) {  
     let inputValue = this.input.value
-  console.log(inputValue);
-  let selectedIndex = this.input.selectedIndex;
-  console.log(selectedIndex);
-  let inputText = this.input.options[this.input.selectedIndex].text;
-  console.log(inputText);
-  let inputOptions = Array.from(this.input.options);
-  let inputOptionsIncludes = inputOptions.includes(text);
-  if(inputOptionsIncludes){
-    return [
+    console.log(inputValue);
+    let selectedIndex = this.input.selectedIndex;
+    console.log(selectedIndex);
+    let inputText = this.input.options[this.input.selectedIndex].text;
+    console.log(inputText);
+    let inputOptions = Array.from(this.input.options);
+    console.log(inputOptions)
+    let inputOptionsIncludes = inputOptions.includes(inputValue);
+    if(inputOptionsIncludes){
+      return [
       {
         text: this.input.options[this.input.selectedIndex].text,
         value: this.input.value
