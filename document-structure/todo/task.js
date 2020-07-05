@@ -16,12 +16,12 @@ taskInput.addEventListener("keydown", function(e){
         e.preventDefault();
 		taskInput.value = " ";
 
-		let taskRemove = this.querySelector(".task__remove");
-        taskRemove.onclick = function(e){
-		e.preventDefault();
-		this.closest('task').remove();
+		let taskRemove = Array.from(document.querySelectorAll(".task__remove"));
+        taskRemove.forEach(elem =>{
+           elem.onclick = (e) => {
+		     e.preventDefault();
+		     elem.closest('task').remove();
+           }
+        })   
 	}
-}
-
-
 })
