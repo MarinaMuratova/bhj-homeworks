@@ -1,6 +1,5 @@
 const taskInput = document.getElementById("task__input");
 const tasksList = document.querySelector(".tasks__list");
-const taskRemove = Array.from(document.querySelectorAll(".task__remove"));
 
 taskInput.addEventListener("keydown", function(e){
 	
@@ -16,12 +15,13 @@ taskInput.addEventListener("keydown", function(e){
 		} 
         e.preventDefault();
 		taskInput.value = " ";
-	}
-})
 
-taskRemove.forEach((elem) => {
-	elem.onclick = function(e){
+		let taskRemove = this.querySelector(".task__remove");
+        taskRemove.onclick = function(e){
 		e.preventDefault();
 		this.closest('task').remove();
 	}
+}
+
+
 })
