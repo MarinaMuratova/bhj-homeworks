@@ -68,24 +68,15 @@ class Autocomplete {
   }
 
   getMatches( text ) {  
-    let inputValue = this.input.value
-    console.log(inputValue);
-    let selectedIndex = this.input.selectedIndex;
-    console.log(selectedIndex);
-    let inputText = this.input.options[this.input.selectedIndex].text;
-    console.log(inputText);
-    let inputOptions = Array.from(this.input.options);
-    console.log(inputOptions)
-    let inputOptionsIncludes = inputOptions.includes(inputValue);
-    if(inputOptionsIncludes){
-      return [
-      {
-        text: this.input.options[this.input.selectedIndex].text,
-        value: this.input.value
+    let optionsArray = [];
+    for (let i = 0; i < this.input.options.length; i++) {
+      if(this.input.options[i].textContent.includes(text)){
+        optionsArray.push(
+          {text: this.input.options[i].textContent,
+          value: this.input.options[i].value})
       }
-    ];
-  }
-    
+    }
+    return optionsArray
   }
 }
 
