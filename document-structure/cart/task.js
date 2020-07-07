@@ -1,22 +1,34 @@
 const minusProduct = Array.from(document.querySelectorAll(".product__quantity-control_dec"));
 const plusProduct = Array.from(document.querySelectorAll(".product__quantity-control_inc"));
+const productQuantityControl = Array.from(document.querySelectorAll(".product__quantity-control"));
+const cartProduct = document.querySelector(".cart__product")
 const productAdd = Array.from(document.querySelectorAll(".product__add"));
 
-minusProduct.forEach((elem)=>{
-	elem.addEventListener("click", function(){
-         if()
-	})
-})
+function minusQuantity(item){
+	let minusItem = item.closest(".product__quantity-controls").querySelector(".product__quantity-value").textContent--;
+    if(minusItem < 1){
+    	return minusItem = 1
+    }
+}
 
-plusProduct.forEach((elem)=>{
-	let productQuantity = document.querySelector(".product__quantity-value");
+function plusQuantity(item){
+	let minusItem = item.closest(".product__quantity-controls").querySelector(".product__quantity-value").textContent++;
+}
+
+productQuantityControl.forEach((elem)=>{
 	elem.addEventListener("click", function(){
-        productQuantity ++;
+		if(this.classList.contains("product__quantity-control_inc")){
+			plusQuantity(item);
+		}
+		if{
+			minusQuantity(item);
+		}    
 	})
 })
 
 productAdd.forEach((elem)=>{
 	elem.addEventListener("click", function(){
-       clone
+       
 	})
 })
+
