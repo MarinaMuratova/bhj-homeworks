@@ -8,7 +8,7 @@ hasTooltip.forEach((elem) => {
         if(current){
         	current.classList.remove("tooltip_active");
         } 
-        if(this.nextElementSibling){
+        else if(this.nextElementSibling){
         	this.nextElementSibling.classList.add("tooltip_active");
             let position = this.getBoundingClientRect();
 
