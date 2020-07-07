@@ -1,8 +1,9 @@
-const minusProduct = Array.from(document.querySelectorAll(".product__quantity-control_dec"));
-const plusProduct = Array.from(document.querySelectorAll(".product__quantity-control_inc"));
+// const minusProduct = Array.from(document.querySelectorAll(".product__quantity-control_dec"));
+// const plusProduct = Array.from(document.querySelectorAll(".product__quantity-control_inc"));
 const productQuantityControl = Array.from(document.querySelectorAll(".product__quantity-control"));
-const cartProduct = document.querySelector(".cart__product")
+const cartProduct = document.querySelector(".cart__products")
 const productAdd = Array.from(document.querySelectorAll(".product__add"));
+
 
 function minusQuantity(item){
 	let minusItem = item.closest(".product__quantity-controls").querySelector(".product__quantity-value").textContent--;
@@ -18,10 +19,10 @@ function plusQuantity(item){
 productQuantityControl.forEach((elem)=>{
 	elem.addEventListener("click", function(){
 		if(this.classList.contains("product__quantity-control_inc")){
-			plusQuantity(item);
+			plusQuantity(elem);
 		}
-		if{
-			minusQuantity(item);
+		if(this.classList.contains("product__quantity-control_dec")){
+			minusQuantity(elem);
 		}    
 	})
 })
@@ -31,4 +32,6 @@ productAdd.forEach((elem)=>{
        
 	})
 })
+
+
 
