@@ -10,11 +10,7 @@ xhr.send();
 xhr.onreadystatechange = function(){
 	if (xhr.readyState === 4 & xhr.status === 200){
 		const response = JSON.parse(xhr.responseText);
-		console.log(response);
-		console.log(response.id);
-		console.log(response.data.title);
 		let answers = response.data.answers;
-		console.log(answers);
 		pollTitle.insertAdjacentHTML('beforeEnd',
 			`<div class="poll__title" id="poll__title">
             ${response.data.title}
@@ -25,5 +21,11 @@ xhr.onreadystatechange = function(){
             	${answers[i]}
                 </button>`)
 		}
+	const pollAnswersList = document.querySelectorAll(".poll__answer");
+	pollAnswersList.forEach(elem => {
+		elem.addEventListener("click", () => {
+				alert("Спасибо, ваш голос засчитан!")
+		})
+	})
 	}	
 }
